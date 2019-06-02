@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 
+require './lib/best_mods_2019'
+
 BestMods2019::CLI.new.call
 

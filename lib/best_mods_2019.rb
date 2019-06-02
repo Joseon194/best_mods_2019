@@ -1,6 +1,2 @@
-require "best_mods_2019/version"
-
-module BestMods2019
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative './best_mods_2019/version'
+require_relative './best_mods_2019/cli'
