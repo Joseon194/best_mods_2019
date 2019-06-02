@@ -1,5 +1,5 @@
 require 'open-uri'
-requrie 'nokogiri'
+require 'nokogiri'
 require 'pry'
 
 require_relative './best_mods_2019/mod'
