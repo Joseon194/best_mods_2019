@@ -25,6 +25,11 @@ class BestMods2019::CLI
     when "2"
       puts "More info on mod 2..."
     end 
+    when "list"
+      list_mods
+    else
+      puts "Not sure what you want, type list or exit."
+    end
   end
 end
 
