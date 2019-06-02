@@ -6,26 +6,26 @@ class BestMods2019::CLI
     goodbye
   end
   
-def list_deals
+def list_mods
     # here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
-    puts "Today's Daily Deals:"
-    @deals = DailyDeal::Deal.today
-    @deals.each.with_index(1) do |deal, i|
-      puts "#{i}. #{deal.name} - #{deal.price} - #{deal.availability}"
+    puts "2019's best PC mods:"
+    @mods = BestMods2019::Mod.thisyear
+    @mods.each.with_index(1) do |mod, i|
+      puts "#{i}. #{mod.name} - #{mod.releasedate} - #{deal.url}"
     end
   end
 
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
+      puts "Enter the number of the mod you'd like more info on or type list to see the mods again or type exit:"
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_deal = @deals[input.to_i-1]
-        puts "#{the_deal.name} - #{the_deal.price} - #{the_deal.availability}"
+        the_mod = @mods[input.to_i-1]
+        puts "#{mod.name} - #{mod.releasedate} - #{mod.url}"
       elsif input == "list"
-        list_deals
+        list_mods
       else
         puts "Not sure what you want, type list or exit."
       end
