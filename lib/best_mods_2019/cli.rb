@@ -11,7 +11,7 @@ def list_mods
     puts "2019's best PC mods:"
     @mods = BestMods2019::Mod.thisyear
     @mods.each.with_index(1) do |mod, i|
-      puts "#{i}. #{mod.name} - #{mod.releasedate} - #{deal.url}"
+      puts "#{i}. #{mod.name} - #{mod.datemade}"
     end
   end
 
@@ -23,7 +23,7 @@ def list_mods
 
       if input.to_i > 0
         the_mod = @mods[input.to_i-1]
-        puts "#{mod.name} - #{mod.releasedate} - #{mod.url}"
+        puts "#{mod.name} - #{mod.releasedate}"
       elsif input == "list"
         list_mods
       else

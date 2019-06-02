@@ -1,9 +1,9 @@
 class BestMods2019::Mod
   
-attr_accessor :name, :datemade, :url?
+attr_accessor :name, :datemade, #:url?
 
 def self.thisyear
-self.scrape_mod
+self.scrape_mods
 end
 
  def self.scrape_mods
@@ -18,11 +18,10 @@ end
     doc = Nokogiri::HTML(open("https://www.moddb.com/mods/top"))
 
     mod = self.new
-    mod.name = doc.search("h2.main-title").text.strip
-    mod.datemade = doc.search("#todays-deal span.price").text.strip
-    mod.url = doc.search("a.wantone").first.attr("href").strip
+    mod.name = doc.css("div.content a").text.strip
+    mod.datemade = doc.css("span.time").text.strip
+    #mod.url = mod.css("a.wantone").first.attr("href").strip
 
     mod
   end
-end
 end
