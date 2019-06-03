@@ -22,7 +22,7 @@ def list_mods
 
       if input.to_i > 0
         the_mod = @mods[input.to_i-1]
-        puts "#{mod.name} - #{mod.game}"
+        puts "#{the_mod.name} - #{the_mod.game}"
       elsif input == "list"
         list_mods
       else
