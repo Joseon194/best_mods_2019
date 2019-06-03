@@ -17,12 +17,12 @@ def list_mods
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the mod you'd like more info on or type list to see the mods again or type exit:"
+      puts "Enter the number of the mod and copy and paste the URL if you'd like more info on the mod or type list to see the mods again or type exit:"
       input = gets.strip.downcase
 
       if input.to_i > 0
         the_mod = @mods[input.to_i-1]
-        puts "#{the_mod.name} - #{the_mod.game}"
+        puts "#{the_mod.name} - #{the_mod.game} - #{the_mod.url}"
       elsif input == "list"
         list_mods
       else
