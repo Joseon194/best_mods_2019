@@ -7,11 +7,10 @@ class BestMods2019::CLI
   end
   
 def list_mods
-    # here doc - http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html
     puts "2019's best PC mods:"
     @mods = BestMods2019::Mod.thisyear
     @mods.each.with_index(1) do |mod, i|
-      puts "#{i}. #{mod.name} - #{mod.datemade}"
+      puts "#{i}. #{mod.name} - #{mod.game}"
     end
   end
 
@@ -23,7 +22,7 @@ def list_mods
 
       if input.to_i > 0
         the_mod = @mods[input.to_i-1]
-        puts "#{mod.name} - #{mod.releasedate}"
+        puts "#{mod.name} - #{mod.game}"
       elsif input == "list"
         list_mods
       else
