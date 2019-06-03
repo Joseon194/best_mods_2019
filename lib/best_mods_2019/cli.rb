@@ -32,6 +32,6 @@ def list_mods
   end
 
   def goodbye
-    puts "See you tomorrow for more deals!!!"
+    puts "See you tomorrow for more mods!!!"
   end
 end
